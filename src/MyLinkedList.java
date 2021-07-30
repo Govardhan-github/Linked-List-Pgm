@@ -1,6 +1,6 @@
 	/*
-	 * Program To Deleting The Elements In Between LinkedList
-	 * In This Program Using pop Operation
+	 * Program To Deleting The Last Element In LinkedList
+	 * In This Program Using popLast Operation
 	 */
 public class MyLinkedList {
 	/*
