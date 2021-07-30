@@ -1,6 +1,6 @@
 	/*
-	 * Program To Append The Elements To LinkedList
-	 * In This Program Using Append Operation
+	 * Program To inserting The Elements In Between LinkedList
+	 * In This Program Using InsertAfter Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -9,7 +9,7 @@ public class MyLinkedList {
 public static void main(String[] args) {
 	LinkedList myList = new LinkedList();//Created LinkedList With The Name Of MyList
 	myList.append(56);//Adding 56 To myList
-	myList.append(30);//Adding 30 To myList
+	myList.insertAfter(myList.head,30);//Inserting 30 After First Node To myList
 	myList.append(70);//Adding 70 To myList
 	myList.printList();//Calling PrintList Method
 	}
@@ -53,7 +53,22 @@ public void append(int myNode){
        tail = tail.next;//Tail.next Stored As Tail
     }//End For While Loop
     tail.next=newNode;//Stroing newNode In Tail
-    }
+}
+
+/*
+ *  Method To Insert Element 30 between 56 and 70
+ *  With The Parameters Of PrevNode , myNode
+ */
+public void insertAfter(Node prevNode, int myNode) {
+    if (prevNode == null) {
+       System.out.println("previous node should not be null");//PrevNode Is Null Printing The Statement
+    return;
+    }//End For If Condition
+    Node newNode = new Node(myNode);//Storing The myNode Value in newNode
+    newNode.next = prevNode.next;//Assigning newNode.next Value to prevNode.next 
+    prevNode.next = newNode;//newNode Value Stored In PrevNode.next
+
+}
 // Method To print Linked List
 public void printList(){
     System.out.println("LinkedList:");//Print Statement To Print LinkedList
