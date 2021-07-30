@@ -1,6 +1,6 @@
 	/*
-	 * Program To inserting The Elements In Between LinkedList
-	 * In This Program Using InsertAfter Operation
+	 * Program To Deleting The Elements In Between LinkedList
+	 * In This Program Using pop Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -11,6 +11,10 @@ public static void main(String[] args) {
 	myList.append(56);//Adding 56 To myList
 	myList.insertAfter(myList.head,30);//Inserting 30 After First Node To myList
 	myList.append(70);//Adding 70 To myList
+	System.out.println("Linked List Before Deleting");
+	myList.printList();//Calling PrintList Method
+	myList.pop();//Pop Method To Delete Head
+	System.out.println("Linked List After Deleting");
 	myList.printList();//Calling PrintList Method
 	}
 }
@@ -67,8 +71,16 @@ public void insertAfter(Node prevNode, int myNode) {
     Node newNode = new Node(myNode);//Storing The myNode Value in newNode
     newNode.next = prevNode.next;//Assigning newNode.next Value to prevNode.next 
     prevNode.next = newNode;//newNode Value Stored In PrevNode.next
-
 }
+//Pop Method To pop Head
+public void pop(){
+	//If Condition To Checking Head Is Null Or Not
+    if (head == null){
+         System.out.println("Should not be null");
+         return;
+    }
+    head = head.next;//Head Pointer To Head.next After Deleting The Head
+ }
 // Method To print Linked List
 public void printList(){
     System.out.println("LinkedList:");//Print Statement To Print LinkedList
