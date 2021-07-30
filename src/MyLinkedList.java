@@ -17,7 +17,7 @@ public static void main(String[] args) {
 //Here Declaring Linked List Class
 class LinkedList{
     Node head;
-  //Here Declaring Node Class
+    //Here Declaring Node Class
     class Node {
 	   int myNode;//Declaring Variable myNode
        Node next;
