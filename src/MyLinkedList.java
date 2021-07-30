@@ -13,7 +13,7 @@ public static void main(String[] args) {
 	myList.append(70);//Adding 70 To myList
 	System.out.println("Linked List Before Deleting");
 	myList.printList();//Calling PrintList Method
-	myList.pop();//Pop Method To Delete Head
+	myList.popLast();//Pop Last Method To Delete Last Element
 	System.out.println("Linked List After Deleting");
 	myList.printList();//Calling PrintList Method
 	}
@@ -81,6 +81,22 @@ public void pop(){
     }
     head = head.next;//Head Pointer To Head.next After Deleting The Head
  }
+/*
+ * Pop Last Method To Delete The Last Element
+ */
+public void popLast() {
+	//If Condition To Check Head Is Null Or Not
+    if (head == null) {
+        System.out.println("List is Empty"); }
+        Node last = head;//Storing Head Value In Last
+        Node temp = null;//Temp Value Is Null
+        while (last.next != null){
+                temp = last;//Last Value Is Stored In Temp 
+                last = last.next;//Last.next Stored In Last
+        }//End For While Loop
+        temp.next = null;
+        last.next = temp.next;
+}
 // Method To print Linked List
 public void printList(){
     System.out.println("LinkedList:");//Print Statement To Print LinkedList
