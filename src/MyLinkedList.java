@@ -1,6 +1,6 @@
 	/*
-	 * Program To Delete The Element In LinkedList
-	 * In This Program Using Delete Element Operation
+	 * Program To Sorting The Element In LinkedList
+	 * In This Program Using Sort Element Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -18,6 +18,8 @@ public static void main(String[] args) {
 	myList.deleteNode(40);//Calling Method To delete Node
 	myList.printList();//Calling PrintList Method
 	myList.searchElement(30);//To Search The Element In Linked List
+	myList.sortList();
+	myList.printList();//Calling PrintList Method
 
 	}
 }
@@ -127,7 +129,7 @@ public void searchElement(int myNode)
  * Method To Delete Particular Node
  */
 public void deleteNode(int node){
-Node temp = head, prev = null;//Here Declaring temp,prev variables 
+	Node temp = head, prev = null;//Here Declaring temp,prev variables 
 	// If Condition To Delete The head node itself is a key 
     if(temp != null && temp.myNode == node) {
         head = temp.next;
@@ -142,6 +144,36 @@ Node temp = head, prev = null;//Here Declaring temp,prev variables
         if(temp == null)
             return;
             prev.next = temp.next;//To Deleting a Node
+}
+/*
+ * Method To Sort The Elements In List
+ * Using Bubble Sort To Sort Linked List An Ascending Order
+ */
+public void sortList()
+{
+    Node current = head, index = null;//Declaring Current And Index Variables
+    int temp;//Declaring temp Variable
+    if (head == null){
+        return;
+    }
+    else{
+    	//While Loop Checking Current equals Null Or Not
+        while (current != null){
+            index = current.next;//current.next Will Be Pointing To Index
+        	//While Loop Checking Index equals Null Or Not
+            while (index != null){
+                // if Current Node.myNode is Greaterthan Index's Node , Swap The Data Between Them
+                if(current.myNode > index.myNode){
+                    temp = current.myNode;
+                    current.myNode = index.myNode;
+                    index.myNode = temp;
+                }
+
+                index = index.next;//index.next value Is Storing In Index
+            }
+            current = current.next;//Current.next value Is Storing In Current
+        }
+    }
 }
 // Method To print Linked List
 public void printList(){
