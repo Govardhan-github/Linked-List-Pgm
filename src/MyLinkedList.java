@@ -18,7 +18,7 @@ public static void main(String[] args) {
 	myList.deleteNode(40);//Calling Method To delete Node
 	myList.printList();//Calling PrintList Method
 	myList.searchElement(30);//To Search The Element In Linked List
-	myList.sortList();
+	myList.sortList();//Calling Sort List Method
 	myList.printList();//Calling PrintList Method
 
 	}
