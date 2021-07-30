@@ -1,6 +1,6 @@
 	/*
-	 * Program To Search The Element In LinkedList
-	 * In This Program Using Search Element Operation
+	 * Program To Insert The Element In LinkedList
+	 * In This Program Using Insert After Element Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -11,8 +11,10 @@ public static void main(String[] args) {
 	myList.append(56);//Appending 56 To myList
 	myList.insertAfter(myList.head,30);//Inserting 30 After First Node To myList
 	myList.append(70);//Appending 70 To myList
+	myList.insertAfter(myList.head.next,40);//Inserting 40 After Head.next To myList
 	myList.printList();//Calling PrintList Method
 	myList.searchElement(30);//To Search The Element In Linked List
+
 	}
 }
 //Here Declaring Linked List Class
@@ -99,7 +101,7 @@ public void popLast() {
 	 */
 public void searchElement(int myNode)
 {
-    Node node=head;//Storing Head Value In Nose
+    Node node=head;//Storing Head Value In Node
     int count=1;//Declaring Count Variable With Value 1
     int check=0;//Declaring Check Variable
     while (node != null) {
