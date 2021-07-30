@@ -1,6 +1,6 @@
 	/*
-	 * Program To Deleting The Last Element In LinkedList
-	 * In This Program Using popLast Operation
+	 * Program To Search The Element In LinkedList
+	 * In This Program Using Search Element Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -8,14 +8,11 @@ public class MyLinkedList {
 	 */
 public static void main(String[] args) {
 	LinkedList myList = new LinkedList();//Created LinkedList With The Name Of MyList
-	myList.append(56);//Adding 56 To myList
+	myList.append(56);//Appending 56 To myList
 	myList.insertAfter(myList.head,30);//Inserting 30 After First Node To myList
-	myList.append(70);//Adding 70 To myList
-	System.out.println("Linked List Before Deleting");
+	myList.append(70);//Appending 70 To myList
 	myList.printList();//Calling PrintList Method
-	myList.popLast();//Pop Last Method To Delete Last Element
-	System.out.println("Linked List After Deleting");
-	myList.printList();//Calling PrintList Method
+	myList.searchElement(30);//To Search The Element In Linked List
 	}
 }
 //Here Declaring Linked List Class
@@ -59,10 +56,10 @@ public void append(int myNode){
     tail.next=newNode;//Stroing newNode In Tail
 }
 
-/*
- *  Method To Insert Element 30 between 56 and 70
- *  With The Parameters Of PrevNode , myNode
- */
+	/*
+	 *  Method To Insert Element 30 between 56 and 70
+	 *  With The Parameters Of PrevNode , myNode
+	 */
 public void insertAfter(Node prevNode, int myNode) {
     if (prevNode == null) {
        System.out.println("previous node should not be null");//PrevNode Is Null Printing The Statement
@@ -81,9 +78,9 @@ public void pop(){
     }
     head = head.next;//Head Pointer To Head.next After Deleting The Head
  }
-/*
- * Pop Last Method To Delete The Last Element
- */
+	/*
+	 * Pop Last Method To Delete The Last Element
+	 */
 public void popLast() {
 	//If Condition To Check Head Is Null Or Not
     if (head == null) {
@@ -96,6 +93,28 @@ public void popLast() {
         }//End For While Loop
         temp.next = null;
         last.next = temp.next;
+}
+	/*
+	 * Method To Search The Elements In Linked List
+	 */
+public void searchElement(int myNode)
+{
+    Node node=head;//Storing Head Value In Nose
+    int count=1;//Declaring Count Variable With Value 1
+    int check=0;//Declaring Check Variable
+    while (node != null) {
+    	//If Condition To Compare 
+        if (node.myNode == myNode){ //If Condition Is Satisfied If Condition Is Break
+                check=1;
+                break;
+        }
+        count = count+1;//Incrementing The Count Value
+        node=node.next;//Storing node.next Value In node Further Loop
+    }//End For While Loop
+    if (check==1)//If Check Is One The Print Statement Will Print
+        System.out.println("Node with value "+myNode+" is found at position " +count);
+    else
+        System.out.println("Element is not present in the list");
 }
 // Method To print Linked List
 public void printList(){
