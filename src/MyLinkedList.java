@@ -1,6 +1,6 @@
 	/*
-	 * Program To Insert The Element In LinkedList
-	 * In This Program Using Insert After Element Operation
+	 * Program To Delete The Element In LinkedList
+	 * In This Program Using Delete Element Operation
 	 */
 public class MyLinkedList {
 	/*
@@ -11,7 +11,11 @@ public static void main(String[] args) {
 	myList.append(56);//Appending 56 To myList
 	myList.insertAfter(myList.head,30);//Inserting 30 After First Node To myList
 	myList.append(70);//Appending 70 To myList
+	System.out.println("Before Deleting Node");
 	myList.insertAfter(myList.head.next,40);//Inserting 40 After Head.next To myList
+	myList.printList();//Calling PrintList Method
+	System.out.println("After Deleting Node");
+	myList.deleteNode(40);//Calling Method To delete Node
 	myList.printList();//Calling PrintList Method
 	myList.searchElement(30);//To Search The Element In Linked List
 
@@ -117,6 +121,27 @@ public void searchElement(int myNode)
         System.out.println("Node with value "+myNode+" is found at position " +count);
     else
         System.out.println("Element is not present in the list");
+}
+
+/*
+ * Method To Delete Particular Node
+ */
+public void deleteNode(int node){
+Node temp = head, prev = null;//Here Declaring temp,prev variables 
+	// If Condition To Delete The head node itself is a key 
+    if(temp != null && temp.myNode == node) {
+        head = temp.next;
+        return;
+    }//End Of If Condition
+    // Using While Loop To Search For a Key To Be Deleted
+    while (temp != null &&temp.myNode !=node){
+        prev = temp;
+        temp = temp.next;
+    }//End Of While Loop
+    //If Key is Not present Return
+        if(temp == null)
+            return;
+            prev.next = temp.next;//To Deleting a Node
 }
 // Method To print Linked List
 public void printList(){
